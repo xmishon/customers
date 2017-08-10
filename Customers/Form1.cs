@@ -46,7 +46,7 @@ namespace Customers
 
         private void PrintResults(int custID, int custPurchases, int itemsAmount)
         {
-            Action action = () => { textBox1.Text += "Customer " + custID + " have made " + custPurchases + " and bought " + itemsAmount + " items." + Environment.NewLine; };
+            Action action = () => { textBox1.Text += "Customer " + custID + " have made " + custPurchases + " purchases and bought " + itemsAmount + " items." + Environment.NewLine; };
             Invoke(action);
         }
     }

@@ -58,6 +58,7 @@ namespace Customers
             Random r = rr as Random;
             while (Storage.f)
             {
+                Thread.Sleep(2);
                 TakeAnItems(r);
                 MakeAPurchase();
             }
