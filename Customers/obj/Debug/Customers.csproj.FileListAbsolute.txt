@@ -1,1 +1,9 @@
 E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\bin\Debug\Customers.exe.config
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\bin\Debug\Customers.exe
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\bin\Debug\Customers.pdb
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\obj\Debug\Customers.csprojResolveAssemblyReference.cache
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\obj\Debug\Customers.Form1.resources
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\obj\Debug\Customers.Properties.Resources.resources
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\obj\Debug\Customers.csproj.GenerateResource.Cache
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\obj\Debug\Customers.exe
+E:\Users\Mikhail\Documents\2017_IU\К собеседованию\Customers\Customers\obj\Debug\Customers.pdb

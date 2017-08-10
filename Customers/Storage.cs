@@ -9,18 +9,17 @@ namespace Customers
     public class Storage
     {
         int Items;
-
+        public static bool f;
         public Storage()
         {
-            Items = 100;
+            Items = 1000;
+            f = true;
         }
 
         public int GetItems(int i)
         {
             Items -= i;
-            if (Items < 0)
-                return Math.Abs(Items);
-            return Items;
+                return Items;
         }
     }
 }
