@@ -12,9 +12,12 @@ namespace Customers
 {
     public partial class Form1 : Form
     {
+        public Random r; 
+
         public Form1()
         {
             InitializeComponent();
+            r = new Random(System.DateTime.Now.Millisecond);
         }
     }
 }
