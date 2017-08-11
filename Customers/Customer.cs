@@ -15,18 +15,18 @@ namespace Customers
     {
         int currItemsAmount;
         int sumItemsAmount;
-        int purchaseAmount;
+        int customersAmount = 4;
         int customerNumber;
         public delegate int GetItemsDel(int num);
         GetItemsDel del;
         public delegate void OutputDel(int custNum, int purchasesAmount, int itemsAmount);
         public OutputDel outpDel;
 
-        public Customer(int i, Storage st)
+        public Customer(int i, Storage st, int custAmount)
         {
             customerNumber = i;
             currItemsAmount = 0;
-            purchaseAmount = 0;
+            customersAmount = custAmount;
             sumItemsAmount = 0;
             del = new GetItemsDel(st.GetItems);
         }
@@ -36,11 +36,11 @@ namespace Customers
             currItemsAmount = r.Next(0, 10); 
         }
 
-        public void MakeAPurchase()
+        public void MakeAPurchase(int[] purchasesAmount)
         {
             int corr = del(currItemsAmount);
             sumItemsAmount += currItemsAmount;
-            purchaseAmount++;
+            purchasesAmount[customerNumber]++;
             if (corr < 0)
             {
                 sumItemsAmount -= Math.Abs(corr);
@@ -48,23 +48,33 @@ namespace Customers
             }
             else if (corr == 0)
             {
-                purchaseAmount--;
+                purchasesAmount[customerNumber]--;
                 Storage.f = false;
             }
         }
 
-        public void Work(Object rr)
+        public void Work(Object parr)
         {
-            Random r = rr as Random;
+            Parametres par = parr as Parametres;
             while (Storage.f)
             {
-                Thread.Sleep(2);
-                TakeAnItems(r);
-                MakeAPurchase();
+                Thread.Sleep(1);
+                TakeAnItems(par.r);
+                int t = 0;
+                for (int i = 0; i < customersAmount; i++)
+                    t = (par.purchasesAmount[customerNumber] - par.purchasesAmount[i]) > t ? (par.purchasesAmount[customerNumber] - par.purchasesAmount[i]) : t;
+                if (t <= 0)
+                    MakeAPurchase(par.purchasesAmount);
             }
 
-            outpDel(customerNumber, purchaseAmount, sumItemsAmount);            
-            //outpDel(customerNumber, purchaseAmount, sumItemsAmount);
+            outpDel(customerNumber, par.purchasesAmount[customerNumber], sumItemsAmount);            
         }
     }
+
+    public class Parametres
+    {
+        public Random r;
+        public int[] purchasesAmount;
+    }
+
 }
